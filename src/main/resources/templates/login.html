@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Notes App</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}"/>
+<link rel="stylesheet" th:href="@{/css/custom.css}"/>
+<link rel="stylesheet" th:href="@{/css/main.css}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+<div style="width: 42%;margin: auto;margin-top: 10%; border: 1px solid black; background-color: cyan;">
+<h1 class="text-center"> User Login</h1>
+ 	
+<form action="#" th:action="@{/loginsubmit}" th:object="${student}" method="post">
+
+<table class="table table-hover">
+<tr>
+	<td> Email :	</td>
+	<td><input class="form-control" type="text" th:field="*{email}" />
+	<label th:if="${#fields.hasErrors('email')}"  th:errors="*{email}"  th:class="'error'">Error in Email address</label>
+	</td>
+</tr>
+<tr>
+	<td> Password :	</td>
+	<td><input class="form-control" type="password" th:field="*{password}" />
+	<label th:if="${#fields.hasErrors('password')}"  th:errors="*{password}"  th:class="'password'">Error in password</label>
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td><input class="form-control" type="submit" value="Login"/></td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

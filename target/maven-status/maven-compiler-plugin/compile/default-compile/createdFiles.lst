@@ -1,0 +1,9 @@
+com\springboothibernate\controller\UserFormController.class
+com\springboothibernate\model\Notes.class
+com\springboothibernate\repository\UserRepository.class
+com\springboothibernate\NotesApplication.class
+com\springboothibernate\dao\NotesDAO.class
+com\springboothibernate\controller\NotesController.class
+com\springboothibernate\model\User.class
+com\springboothibernate\repository\NotesRepository.class
+com\springboothibernate\dao\UserDAO.class

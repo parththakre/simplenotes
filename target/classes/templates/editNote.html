@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" style="background: white;">
+<head>
+<title>Edit Note </title>
+<link rel="stylesheet" th:href="@{/css/custom.css}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<div>
+<h1 class="text-center">Edit Note</h1>
+<form action="#" th:action="@{'/editsavenote/'+ ${note.id}}" th:object="${note}" method="post">
+<table class="table table-bordered table-hover">
+     <tr>				
+		<td>
+		<div th:value="${note.id}"></div>
+		</td>
+		<td></td>				
+	</tr>
+	 <tr>
+		<td>EmailId :</td>
+		<td>
+		<div th:text = "${note.emailId}"> </div>
+		</td>
+							
+	</tr>
+	<tr>
+		<td>Title : 	</td>
+		<td>
+		<div th:field="${note.title}" th:text = "${note.title}"> </div>
+		</td>
+	</tr>
+	<tr>
+		<td> Content :	</td>
+		<td><textarea class="form-control" type="text" th:field="${note.content}" ></textarea>
+		</td>
+	</tr>
+	<tr>
+	<td></td>
+	<td>
+       <input class="form-control btn-primary" type="submit" value="Edit"/> 
+     </td>
+     </tr>
+</table>
+</form>
+</div>
+</body>
+</html>

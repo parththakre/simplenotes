@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" style="background: white;">
+<head>
+<title>Add Note</title>
+<link rel="stylesheet" th:href="@{/css/custom.css}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    </head>
+<body>
+	
+<div>
+<h1 class="text-center">Add note </h1>
+<form action="#" th:action="@{'/saveNote/' + ${emailId}}" th:object="${notes}" method="post">
+<table class="table table-bordered table-hover">
+	     <tr>				
+			<td >
+			<input type="hidden" th:field="*{id}" />
+			<label th:if="${#fields.hasErrors('id')}"  th:errors="*{id}"  th:class="'error'">Error in First Name</label>
+			</td>
+			<td></td>
+		</tr>
+		 <tr>
+			<td>EmailId :</td>
+			<td>
+			<div th:text = "${emailId}"> </div>
+			</td>
+		</tr>
+		<tr>
+			<td>Title : 	</td>
+			<td><input class="form-control"  type="text" th:field="*{title}" />
+			<label th:if="${#fields.hasErrors('title')}"  th:errors="*{title}"  th:class="'error'">Error in Last Name</label>
+			</td>
+		</tr>
+		<tr>
+			<td> Content :	</td>
+			<td><textarea class="form-control"  type="text" th:field="*{content}" ></textarea>
+			<label th:if="${#fields.hasErrors('content')}"  th:errors="*{content}"  th:class="'error'">Error in Email address</label>
+			</td>
+		</tr>
+		<tr>
+		<td></td>
+		<td >
+            <input class="form-control btn-primary"  type="submit" value="Add"/> 
+        </td>
+	     </tr>
+</table>
+		
+		
+	    
+	     </form>
+	     </div>
+	</body>
+</html>
